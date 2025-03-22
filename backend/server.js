@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const MONGO_URI = 'mongodb+srv://jaison:jaison123@cluster0.rgqxccy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(MONGO_URI, { 
